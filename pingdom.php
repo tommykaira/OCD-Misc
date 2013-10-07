@@ -37,9 +37,9 @@ XML;
 	
 	function mysql_service()
 	{
-		$status = `mysql -u root --password=0cds3cr3t2013 -e "SHOW DATABASES LIKE 'ocd'"`;
+		$status = `mysqladmin -uroot -p0cds3cr3t2013 ping`;
 		
-		$look_for_status	= 'ocd';
+		$look_for_status	= 'alive';
 		$service_status 	= 'OK';
 		
 		if (strpos(strtolower($status), $look_for_status) === FALSE) 
