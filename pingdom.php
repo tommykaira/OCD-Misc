@@ -2,11 +2,17 @@
 
 	function pingdom_message($status = 'NOT OK' ,$response_time = 0)
 	{
-		$data = '<?xml version="1.0" encoding="ISO-8859-1"?>';
-		$data .= "<pingdom_http_custom_check>";
-		$data .= "<status>$status</status>";
-		$data .= "<response_time>$response_time</response_time>";
-		$data .= "</pingdom_http_custom_check>";
+$string = <<<XML
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pingdom_http_custom_check>
+	<status>
+		$status
+	</status>";
+	<response_time>
+		$response_time
+	</response_time>";
+</pingdom_http_custom_check>
+XML;
 
 		echo $data;
 	}
