@@ -69,7 +69,7 @@ XML;
 	//-----------------//
 
 
-	$service = isset($_GET['service'])?$_GET['service']:'voipline';
+	$service = isset($_GET['service'])?$_GET['service']:'generic';
 
 	$starttime = microtime(true);
 
@@ -83,6 +83,7 @@ XML;
 			$status = mysql_service();
 		break;
 
+		case 'generic':
 		default:
 			$status = generic();
 		break;
