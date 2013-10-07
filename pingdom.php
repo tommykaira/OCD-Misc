@@ -14,7 +14,7 @@ $string = <<<XML
 </pingdom_http_custom_check>
 XML;
 
-		echo $data;
+		echo $string;
 	}
 
 
