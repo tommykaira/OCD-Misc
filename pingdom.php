@@ -4,8 +4,8 @@
 	{
 $string = <<<XML
 <pingdom_http_custom_check>
-	<status>$status</status>
-	<response_time>$response_time</response_time>
+<status>$status</status>
+<response_time>$response_time</response_time>
 </pingdom_http_custom_check>
 XML;
 
