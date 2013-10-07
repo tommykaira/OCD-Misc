@@ -3,7 +3,6 @@
 	function pingdom_message($status = 'NOT OK' ,$response_time = 0)
 	{
 $string = <<<XML
-<?xml version="1.0" encoding="ISO-8859-1"?>
 <pingdom_http_custom_check>
 	<status>
 		$status
