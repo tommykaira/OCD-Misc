@@ -52,6 +52,18 @@ XML;
 	
 	
 	
+	
+	//--------------------------------//
+	//-- Just return OK if accessed --//
+	//--------------------------------//
+	
+	function generic()
+	{
+		return 'OK';
+	}
+	
+	
+	
 	//-----------------//
 	//-- Main SCRIPT --//
 	//-----------------//
@@ -72,6 +84,7 @@ XML;
 		break;
 
 		default:
+			$status = generic();
 		break;
 	}
 
