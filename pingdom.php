@@ -35,7 +35,7 @@ XML;
 	//-- Check if MYSQL is UP --//
 	//--------------------------//
 	
-	function mysql()
+	function mysql_service()
 	{
 		$status = `mysql -u root --password=0cds3cr3t2013 -e "SHOW DATABASES LIKE 'ocd'"`;
 		
@@ -68,7 +68,7 @@ XML;
 		break;
 
 		case 'mysql':
-			$status = mysql();
+			$status = mysql_service();
 		break;
 
 		default:
