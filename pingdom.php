@@ -13,19 +13,48 @@ XML;
 	}
 
 
+	//------------------------------------------------//
+	//-- Check if Asterisk is connected to VOIPLINE --//
+	//------------------------------------------------//
+	
 	function voipline()
 	{
 		$status 			= `asterisk -x "sip show registry"`;
 		$look_for_status	= 'registered';
-		$voipline_status 	= 'OK';
+		$service_status 	= 'OK';
 
 		if (strpos(strtolower($status), $look_for_status) === FALSE) 
 		{
-			$voipline_status = 'NOT OK';
+			$service_status = 'NOT OK';
 		}
 
-		return $voipline_status;
+		return $service_status;
 	}
+	
+	//--------------------------//
+	//-- Check if MYSQL is UP --//
+	//--------------------------//
+	
+	function mysql()
+	{
+		$status = `mysql -u root --password=0cds3cr3t2013 -e "SHOW DATABASES LIKE 'ocd'"`;
+		
+		$look_for_status	= 'ocd';
+		$service_status 	= 'OK';
+		
+		if (strpos(strtolower($status), $look_for_status) === FALSE) 
+		{
+			$service_status = 'NOT OK';
+		}
+
+		return $service_status;
+	}
+	
+	
+	
+	//-----------------//
+	//-- Main SCRIPT --//
+	//-----------------//
 
 
 	$service = isset($_GET['service'])?$_GET['service']:'voipline';
@@ -36,6 +65,10 @@ XML;
 	{
 		case 'voipline':
 			$status = voipline();
+		break;
+
+		case 'mysql':
+			$status = mysql();
 		break;
 
 		default:
