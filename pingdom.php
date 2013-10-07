@@ -43,7 +43,7 @@ XML;
 	}
 
 	$stoptime  		= microtime(true);
-	$response_time 	= number_format(($stoptime - $starttime) * 1000, 4, '.', '');
+	$response_time 	= number_format(($stoptime - $starttime) * 1000, 3, '.', '');
 
 	pingdom_message($status, $response_time);
 
