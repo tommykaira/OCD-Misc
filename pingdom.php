@@ -8,8 +8,8 @@ $string = <<<XML
 <response_time>$response_time</response_time>
 </pingdom_http_custom_check>
 XML;
-
-		echo $string;
+		$xml = new SimpleXMLElement($string);
+		echo $xml->asXML();
 	}
 
 
