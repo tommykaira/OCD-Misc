@@ -100,6 +100,10 @@ XML;
 			$status = mysql_service();
 		break;
 
+		case 'doctorportal':
+			$status = mysql_service();
+		break;
+
 		case 'generic':
 		default:
 			$status = generic();
