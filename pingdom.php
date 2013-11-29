@@ -101,7 +101,7 @@ XML;
 		break;
 
 		case 'doctorportal':
-			$status = mysql_service();
+			$status = doctorportal();
 		break;
 
 		case 'generic':
