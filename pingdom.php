@@ -50,7 +50,24 @@ XML;
 		return $service_status;
 	}
 	
+	//----------------------------------//
+	//-- Check if Doctor Portal is UP --//
+	//----------------------------------//
 	
+	function doctorportal()
+	{
+		$status = `curl http://localhost:8888/ping `;
+		
+		$look_for_status	= 'success';
+		$service_status 	= 'OK';
+		
+		if (strpos(strtolower($status), $look_for_status) === FALSE) 
+		{
+			$service_status = 'NOT OK';
+		}
+
+		return $service_status;
+	}
 	
 	
 	//--------------------------------//
